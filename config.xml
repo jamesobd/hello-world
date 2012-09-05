@@ -19,7 +19,6 @@
 	
 	<preference name="phonegap-version" value="2.0.0" />
 	<preference name="stay-in-webview" value="true" />
-	<preference name="orientation" value="landscape" />
 
 </widget>
 
