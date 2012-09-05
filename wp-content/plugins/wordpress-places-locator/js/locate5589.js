@@ -83,7 +83,8 @@ function getLocation() {
 				
 					if(submitNo == 0) {
 						setTimeout(function() {
-							//window.location.reload();	
+							//window.location.reload();
+							alert('sup?');
 						},1000);
 					} else {
 						setTimeout(function() {
