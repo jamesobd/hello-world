@@ -78,7 +78,7 @@ function getLocation() {
 					setCookie("wppl_zipcode",zipcode,7);
 					setCookie("wppl_city",cityState,7);
 				
-					document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you'>We found you at " + cityState + "</p>";
+					//document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you'>We found you at " + cityState + "</p>";
 					jQuery(".wppl-address").val(cityState);
 				
 					if(submitNo == 0) {
