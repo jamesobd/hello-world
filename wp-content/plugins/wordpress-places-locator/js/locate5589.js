@@ -17,7 +17,7 @@ function foundYouMessage(){
 	jQuery('html').prepend('<div id="wppl-justwait"></div>');
 	var locateMessage=document.getElementById('wppl-justwait');
 	locateMessage.style.display = "";
-	//locateMessage.innerHTML = '<div id="wppl-wait-within"><div id="wppl-wait-close"><a href="#" onclick="removeMessage();" style="text-decoration:none;">X</a></div><br /><div id="wppl-wait-message"></div></div>';
+	locateMessage.innerHTML = '<div id="wppl-wait-within"><div id="wppl-wait-close"><a href="#" onclick="removeMessage();" style="text-decoration:none;">X</a></div><br /><div id="wppl-wait-message"></div></div>';
 }
 
 //// set cookies ////
@@ -78,13 +78,13 @@ function getLocation() {
 					setCookie("wppl_zipcode",zipcode,7);
 					setCookie("wppl_city",cityState,7);
 				
-					//document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you'>We found you at " + cityState + "</p>";
+					document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you'>We found you at " + cityState + "</p>";
 					jQuery(".wppl-address").val(cityState);
 				
 					if(submitNo == 0) {
 						setTimeout(function() {
 							//window.location.reload();
-							alert('sup?');
+							removeMessage();
 						},1000);
 					} else {
 						setTimeout(function() {
@@ -102,28 +102,28 @@ function getLocation() {
 	function showError(error) {
 		switch(error.code) {
     		case error.PERMISSION_DENIED:
-      			//document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>User denied the request for Geolocation.</p>"; 		
+      			document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>User denied the request for Geolocation.</p>"; 		
       			setTimeout(function() {
       				setCookie("wppl_denied","denied",1);
       				removeMessage();
       			},1000)
       		break;
     		case error.POSITION_UNAVAILABLE:
-      			//document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>Location information is unavailable.</p>";
+      			document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>Location information is unavailable.</p>";
       			setTimeout(function() {
       				setCookie("wppl_denied","denied",1);
       				removeMessage();
       			},1000)
       		break;
     		case error.TIMEOUT:
-      			//document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>The request to get user location timed out.</p>";
+      			document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>The request to get user location timed out.</p>";
       			setTimeout(function() {
       				setCookie("wppl_denied","denied",1);
       				removeMessage();
       			},1000)
       		break;
     			case error.UNKNOWN_ERROR:
-      			//document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>An unknown error occurred.</p>";
+      			document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>An unknown error occurred.</p>";
       			setTimeout(function() {
       				setCookie("wppl_denied","denied",1);
       				removeMessage();
