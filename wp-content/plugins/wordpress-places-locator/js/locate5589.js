@@ -17,7 +17,7 @@ function foundYouMessage(){
 	jQuery('html').prepend('<div id="wppl-justwait"></div>');
 	var locateMessage=document.getElementById('wppl-justwait');
 	locateMessage.style.display = "";
-	locateMessage.innerHTML = '<div id="wppl-wait-within"><div id="wppl-wait-close"><a href="#" onclick="removeMessage();" style="text-decoration:none;">X</a></div><br /><div id="wppl-wait-message"><p>Just one more moment please. Getting your current location...</p><br /></div></div>';
+	locateMessage.innerHTML = '<div id="wppl-wait-within"><div id="wppl-wait-close"><a href="#" onclick="removeMessage();" style="text-decoration:none;">X</a></div><br /><div id="wppl-wait-message"></div></div>';
 }
 
 //// set cookies ////
