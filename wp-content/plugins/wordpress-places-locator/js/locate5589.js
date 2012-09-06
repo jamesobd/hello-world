@@ -17,9 +17,14 @@ $(document).ready(function(){
 	})
 	
 	$('form').on('submit', function(e){
-		alert('stop submit');
-		//e.preventDefault();
-		//return false;
+		try{
+			alert('stop submit');
+			e.preventDefault();
+		}
+		catch(err){
+			alert('oh no!');
+		}
+		return false;
 	});
 })
 
