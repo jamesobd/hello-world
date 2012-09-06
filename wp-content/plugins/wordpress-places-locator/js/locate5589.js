@@ -3,17 +3,23 @@
  */
 $(document).ready(function(){
 	$('form').on('click', 'input[type="submit"]', function(e){
-		var params = $(e.target.form).serialize();
-		window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: false});
-		alert($(e.target.form).serialize());
-		e.preventDefault();
+		try{
+			var params = $(e.target.form).serialize();
+			window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: false});
+			e.preventDefault();
+			e.stopImmediatePropagation()
+			alert($(e.target.form).serialize());
+		}
+		catch(err) {
+			alert('what the crap?');
+		}
 		return false;
 	})
 	
 	$('form').on('submit', function(e){
 		alert('stop submit');
-		e.preventDefault();
-		return false;
+		//e.preventDefault();
+		//return false;
 	});
 })
 
