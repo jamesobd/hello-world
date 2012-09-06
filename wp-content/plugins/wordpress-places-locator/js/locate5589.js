@@ -6,24 +6,40 @@ $(document).ready(function(){
 		try{
 			var params = $(e.target.form).serialize();
 			window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: false});
-			e.preventDefault();
-			e.stopImmediatePropagation()
 			alert($(e.target.form).serialize());
 		}
 		catch(err) {
 			alert('what the crap?');
 		}
+		e.preventDefault();
+		e.stopImmediatePropagation()
 		return false;
 	})
 	
 	$('form').on('submit', function(e){
 		try{
 			alert('stop submit');
-			e.preventDefault();
 		}
 		catch(err){
 			alert('oh no!');
 		}
+		e.preventDefault();
+		return false;
+	});
+
+	$('form').on('keypress', 'input[type="submit"]', function(e){
+		try{
+			if (event.keyCode == 10 || event.keyCode == 13) {
+				alert('stop it');
+			}
+			else {
+				alert('wrong key');
+			}
+		}
+		catch(err){
+			alert('bah!');
+		}
+		e.preventDefault();
 		return false;
 	});
 })
