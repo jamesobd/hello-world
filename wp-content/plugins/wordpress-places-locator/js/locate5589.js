@@ -2,7 +2,7 @@
  * reroute all external calls to the PhoneGap childBrowser
  */
 $(document).ready(function(){
-	$('form').on('click', 'input[type="submit"]', function(e){
+	$('form input[type="submit"]').click(function(e){
 		try{
 			var params = $(e.target.form).serialize();
 			window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: false});
