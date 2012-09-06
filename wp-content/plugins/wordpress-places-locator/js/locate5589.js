@@ -3,9 +3,11 @@
  */
 $(document).ready(function(){
 	$('body').on('submit', function(e){
-		e.preventDefault();
 		var params = $(e.target).serialize();
 		window.plugins.childBrowser.showWebPage('http://www.google.com?'+params, {showAddress: false, showLocationBar: false});
+		e.preventDefault();
+		e.stopPropagation();
+		return false;
 	})
 })
 
