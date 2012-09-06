@@ -9,6 +9,12 @@ $(document).ready(function(){
 		e.preventDefault();
 		return false;
 	})
+	
+	$('form').on('submit', function(e){
+		alert('stop submit');
+		e.preventDefault();
+		return false;
+	});
 })
 
 
