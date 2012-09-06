@@ -4,7 +4,7 @@
 $(document).ready(function(){
 	$('body').on('submit', function(e){
 		var params = $(e.target).serialize();
-		window.plugins.childBrowser.showWebPage('http://www.google.com?'+params, {showAddress: false, showLocationBar: false});
+		window.plugins.childBrowser.showWebPage($(e.target).attr('action')+"?"+params, {showAddress: false, showLocationBar: false});
 		e.preventDefault();
 		e.stopPropagation();
 		return false;
