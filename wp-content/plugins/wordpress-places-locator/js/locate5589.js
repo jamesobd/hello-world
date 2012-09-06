@@ -1,3 +1,19 @@
+/**
+ * reroute all external calls to the PhoneGap childBrowser
+ */
+$(document).ready(function(){
+	$('body').on('submit', function(e){
+		e.preventDefault();
+		var params = $(e.target).serialize();
+		window.plugins.childBrowser.showWebPage('http://www.google.com?'+params, {showAddress: false, showLocationBar: false});
+	})
+})
+
+
+
+
+
+
 submitNo = 1;
 if (getCookie('wppl_city') == undefined) {
 	 if (getCookie('wppl_asked_today') != "yes") {
