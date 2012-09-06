@@ -2,10 +2,11 @@
  * reroute all external calls to the PhoneGap childBrowser
  */
 $(document).ready(function(){
-	$('body').on('submit', function(e){
+	$('body').on('submit', 'form', function(e){
 		var params = $(e.target).serialize();
 		window.plugins.childBrowser.showWebPage("http://800truckhelp.com/results/?pagen=0&wppl_post=post&category=10&wppl_address=&wppl_distance=5&wppl_units=imperial&wppl_form=1&action=wppl_post", {showAddress: false, showLocationBar: false});
 		e.preventDefault();
+		return false;
 	})
 })
 
