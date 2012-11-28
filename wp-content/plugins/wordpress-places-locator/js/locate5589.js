@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('form input[type="submit"]').click(function(e){
 		try{
 			var params = $(e.target.form).serialize();
-			window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: false});
+			window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: true});
 			alert($(e.target.form).serialize());
 		}
 		catch(err) {
