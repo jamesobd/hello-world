@@ -1,14 +1,12 @@
 /**
  * Run after DOM and phonegap are ready
  */
-document.addEventListener("deviceready", $(document).ready(function() {
-	initialize();
-}), false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 
 
 // Run once
-function initialize() {
+function onDeviceReady() {
 	
 	// Listener to have all form submissions to use phonegap childbrowser
 	$('form input[type="submit"]').click(function(e){
