@@ -1,9 +1,10 @@
 /**
  * Run after DOM and phonegap are ready
  */
-$(document).ready(function(){
-	document.addEventListener("deviceready", initialize, false);
-});
+document.addEventListener("deviceready", $(document).ready(function() {
+	initialize();
+}), false);
+
 
 
 // Run once
