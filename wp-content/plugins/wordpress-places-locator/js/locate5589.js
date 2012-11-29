@@ -1,7 +1,15 @@
 /**
- * reroute all external calls to the PhoneGap childBrowser
+ * Run after DOM and phonegap are ready
  */
 $(document).ready(function(){
+	document.addEventListener("deviceready", initialize, false);
+});
+
+
+// Run once
+function initialize() {
+	
+	// Listener to have all form submissions to use phonegap childbrowser
 	$('form input[type="submit"]').click(function(e){
 		try{
 			var params = $(e.target.form).serialize();
@@ -42,7 +50,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		return false;
 	});
-})
+};
 
 
 
