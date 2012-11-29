@@ -1,13 +1,7 @@
-/**
- * Run after DOM and phonegap are ready
- */
-alert(document);
-document.addEventListener("deviceready", onDeviceReady, false);
-
 
 // Run once
 function onDeviceReady() {
-	alert(window.plugins.childBrowser);
+	
 	// Listener to have all form submissions to use phonegap childbrowser
 	$('form input[type="submit"]').click(function(e){
 		try{
@@ -20,9 +14,9 @@ function onDeviceReady() {
 			alert(err);
 		}
 		e.preventDefault();
-		e.stopImmediatePropagation()
+		e.stopImmediatePropagation();
 		return false;
-	})
+	});
 	
 	$('form').on('submit', function(e){
 		try{
@@ -37,7 +31,7 @@ function onDeviceReady() {
 
 	$('form').on('keypress', 'input[type="submit"]', function(e){
 		try{
-			if (event.keyCode == 10 || event.keyCode == 13) {
+			if (event.keyCode === 10 || event.keyCode === 13) {
 				alert('stop it');
 			}
 			else {
@@ -50,15 +44,19 @@ function onDeviceReady() {
 		e.preventDefault();
 		return false;
 	});
-};
+}
 
+/**
+ * Run after DOM and phonegap are ready
+ */
+document.addEventListener("deviceready", onDeviceReady, false);
 
 
 
 
 
 submitNo = 1;
-if (getCookie('wppl_city') == undefined) {
+if (getCookie('wppl_city') === undefined) {
 	 if (getCookie('wppl_asked_today') != "yes") {
 		submitNo = 0;
 		getLocation();
