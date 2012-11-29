@@ -9,7 +9,7 @@ $(document).ready(function(){
 			alert($(e.target.form).serialize());
 		}
 		catch(err) {
-			alert('what the crap?');
+			alert(err);
 		}
 		e.preventDefault();
 		e.stopImmediatePropagation()
