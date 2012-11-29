@@ -1,6 +1,7 @@
 /**
  * Run after DOM and phonegap are ready
  */
+alert(document);
 document.addEventListener("deviceready", onDeviceReady, false);
 
 
