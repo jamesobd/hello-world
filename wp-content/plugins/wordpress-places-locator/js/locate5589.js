@@ -4,10 +4,9 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 
-
 // Run once
 function onDeviceReady() {
-	
+	try{
 	// Listener to have all form submissions to use phonegap childbrowser
 	$('form input[type="submit"]').click(function(e){
 		try{
@@ -16,6 +15,7 @@ function onDeviceReady() {
 			alert($(e.target.form).serialize());
 		}
 		catch(err) {
+			navigator.notification.vibrate(1000);
 			alert(err);
 		}
 		e.preventDefault();
@@ -49,6 +49,10 @@ function onDeviceReady() {
 		e.preventDefault();
 		return false;
 	});
+	}
+	catch(err) {
+		alert(err);
+	}
 };
 
 
