@@ -17,7 +17,6 @@
 		James Jensen
 	</author>
 	
-	<preference name="phonegap-version" value="2.0.0" />
 	<preference name="stay-in-webview" value="true" />
 	
 	<gap:plugin name="ChildBrowser" /> <!-- for Cordova (1.9.0+) -->
