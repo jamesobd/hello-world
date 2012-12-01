@@ -2,17 +2,18 @@
 /**
  * Callback for when phonegap is ready
  */
-function onLoad() {
+$.ready(function() {
 	console.log('onLoad');
+	
 	document.addEventListener("deviceready", onDeviceReady, false);
-}
+});
 
 /**
  * DeviceReady event callback
  */
 function onDeviceReady() {
-	alert('onDeviceReady');
-	exit;
+	console.log('onDeviceReady');
+	
 	// Listener to have all form submissions to use phonegap childbrowser
 	$('form input[type="submit"]').click(function(e){
 		try{
