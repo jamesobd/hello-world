@@ -16,7 +16,7 @@ function onDeviceReady() {
 	
 	// Listener to have all form submissions to use phonegap childbrowser
 	$('form input[type="submit"]').click(function(e) {
-		alert('yahoo');
+		alert('click');
 		try{
 			var params = $(e.target.form).serialize();
 			window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: true});
@@ -32,6 +32,7 @@ function onDeviceReady() {
 	});
 	
 	$('form').on('submit', function(e){
+		alert('submit');
 		try{
 			alert('stop submit');
 		}
@@ -43,6 +44,7 @@ function onDeviceReady() {
 	});
 
 	$('form').on('keypress', 'input[type="submit"]', function(e){
+		alert('keypress');
 		try{
 			if (event.keyCode === 10 || event.keyCode === 13) {
 				alert('stop it');
