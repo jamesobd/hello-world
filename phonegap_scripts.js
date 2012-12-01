@@ -2,7 +2,7 @@
 /**
  * Callback for when phonegap is ready
  */
-$.ready(function() {
+$(function() {
 	console.log('onLoad');
 	
 	document.addEventListener("deviceready", onDeviceReady, false);
