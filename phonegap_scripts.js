@@ -16,47 +16,11 @@ function onDeviceReady() {
 	
 	// Listener to have all form submissions to use phonegap childbrowser
 	$('form input[type="submit"]').click(function(e) {
-		alert('click');
-		try{
-			var params = $(e.target.form).serialize();
-			window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: true});
-			alert($(e.target.form).serialize());
-		}
-		catch(err) {
-			navigator.notification.vibrate(1000);
-			alert(err);
-		}
+		var params = $(e.target.form).serialize();
+		window.plugins.childBrowser.showWebPage("http://800truckhelp.com/results/?"+params, {showLocationBar: false, showAddress: false, showNavigationBar: false});
+		alert($(e.target.form).serialize());
 		e.preventDefault();
 		e.stopImmediatePropagation();
-		return false;
-	});
-	
-	$('form').on('submit', function(e){
-		alert('submit');
-		try{
-			alert('stop submit');
-		}
-		catch(err){
-			alert('oh no!');
-		}
-		e.preventDefault();
-		return false;
-	});
-
-	$('form').on('keypress', 'input[type="submit"]', function(e){
-		alert('keypress');
-		try{
-			if (event.keyCode === 10 || event.keyCode === 13) {
-				alert('stop it');
-			}
-			else {
-				alert('wrong key');
-			}
-		}
-		catch(err){
-			alert('bah!');
-		}
-		e.preventDefault();
 		return false;
 	});
 }
