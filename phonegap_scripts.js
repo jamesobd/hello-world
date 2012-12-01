@@ -4,7 +4,6 @@
  */
 function onLoad() {
 	console.log('onLoad');
-	alert('onLoad');
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
 
