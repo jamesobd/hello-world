@@ -15,7 +15,8 @@ function onDeviceReady() {
 	console.log('onDeviceReady');
 	
 	// Listener to have all form submissions to use phonegap childbrowser
-	$('form input[type="submit"]').click(function(e){
+	$('form input[type="submit"]').click(function(e) {
+		alert('yahoo');
 		try{
 			var params = $(e.target.form).serialize();
 			window.plugins.childBrowser.showWebPage("http://google.com", {showAddress: true});
