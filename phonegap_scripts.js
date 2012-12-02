@@ -31,9 +31,9 @@ function onDeviceReady() {
 		childBrowser(e.target.href);
 	});
 	
-	// Any pages who's body tags have the data-childbrowser-url attribute will redirect to a ChildBrowser
-	if ( $('body').data('childbrowser-url') ) {
-		childBrowser(e.target.href);
+	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
+	if ( childbrowser_redirect_url ) {
+		childBrowser(childbrowser_redirect_url);
 	}
 	
 	// Forms using GET method will work with PhoneGap if the submission uses a ChildBrowser
