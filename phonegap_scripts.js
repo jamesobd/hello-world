@@ -18,7 +18,7 @@ function onDeviceReady() {
 	$('form input[type="submit"]').click(function(e) {
 		var params = $(e.target.form).serialize();
 		window.plugins.childBrowser.showWebPage("http://800truckhelp.com/results/?"+params, {showLocationBar: false, showAddress: false, showNavigationBar: false});
-		alert($(e.target.form).serialize());
+		//alert($(e.target.form).serialize());
 		e.preventDefault();
 		e.stopImmediatePropagation();
 		return false;
