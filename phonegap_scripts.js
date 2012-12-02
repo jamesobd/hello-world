@@ -32,7 +32,7 @@ function onDeviceReady() {
 	});
 	
 	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
-	if ( childbrowser_redirect_url ) {
+	if ( childbrowser_redirect_url != '' ) {
 		alert('ok lets do this');
 		childBrowser(childbrowser_redirect_url);
 	}
