@@ -17,8 +17,7 @@ function onDeviceReady() {
 	// Listener to have all form submissions to use phonegap childbrowser
 	$('form input[type="submit"]').click(function(e) {
 		var params = $(e.target.form).serialize();
-		window.plugins.childBrowser.showWebPage("http://800truckhelp.com/results/?"+params, {showLocationBar: false, showAddress: false, showNavigationBar: false});
-		//alert($(e.target.form).serialize());
+		window.plugins.childBrowser.showWebPage($(e.target.form).attr('action')+'?'+params, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 		e.preventDefault();
 		e.stopImmediatePropagation();
 		return false;
