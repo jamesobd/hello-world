@@ -18,12 +18,12 @@ $(function() {
 function onDeviceReady() {
 	
 	// Forms using POST method will not work on PhoneGap.
-	// Need to use ChildBrowser on any links taking us to pages with these forms.
+	// Use a ChildBrowser on any links taking us to pages with these forms.
 	if ( $('form[method="post"]').length > 0 ) {
-		alert('Warning: This page contains a POST form.  Add a childbrowser class to the link that got you here.');
+		alert('Warning: This page contains a POST form.  Add a childbrowser class to the link that got you here.\n\nAlternatively you can add the data-childbrowser-url attribute to the body to redirect to a ChildBrowser.');
 	}
 	
-	// Any links that have the childbrowser class will use the ChildBrowser plugin
+	// Any links that have the childbrowser class will use a ChildBrowser
 	$('a.childbrowser').on('click', function(){
 		e.preventDefault();
 		
@@ -31,7 +31,12 @@ function onDeviceReady() {
 		childBrowser(e.target.href);
 	});
 	
-	// Forms using GET method will work with PhoneGap and the submission sent to childbrowser
+	// Any pages who's body tags have the data-childbrowser-url attribute will redirect to a ChildBrowser
+	if ( $('body').data('childbrowser-url') ) {
+		childBrowser(e.target.href);
+	}
+	
+	// Forms using GET method will work with PhoneGap if the submission uses a ChildBrowser
 	$('form[method="get"]').on('submit', function(e) {
 		e.preventDefault();
 		var params = $(e.target).serialize();
