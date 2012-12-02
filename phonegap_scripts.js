@@ -36,6 +36,9 @@ function onDeviceReady() {
 		alert('ok lets do this');
 		childBrowser(childbrowser_redirect_url);
 	}
+	else {
+		alert('crap');
+	}
 	
 	// Forms using GET method will work with PhoneGap if the submission uses a ChildBrowser
 	$('form[method="get"]').on('submit', function(e) {
