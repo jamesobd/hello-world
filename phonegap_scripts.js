@@ -44,6 +44,6 @@ function onDeviceReady() {
  * Displays the url in a fullscreen ChildBrowser
  */
 function childBrowser(url) {
-	url = typeof url !== 'undefined' ? a : window.location;
+	url = typeof url !== 'undefined' ? url : window.location;
 	window.plugins.childBrowser.showWebPage(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 }
