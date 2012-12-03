@@ -10,11 +10,11 @@
 	<name>800TruckHelp</name>
 
 	<description>
-		A description asdf
+		A description
 	</description>
 
 	<author href="https://build.phonegap.com" email="support@phonegap.com">
-		James Jensen
+		Mzure
 	</author>
 	
 	<preference name="stay-in-webview" value="true" />

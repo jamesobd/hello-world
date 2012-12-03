@@ -7,6 +7,7 @@
 /**
  * Listener for when phonegap is ready
  */
+alert('in script file');
 $(function() {
 	alert('doc ready');
 	document.addEventListener("deviceready", onDeviceReady, false);
