@@ -7,9 +7,10 @@
 /**
  * Listener for when phonegap is ready
  */
-alert('in script file');
+if ( childbrowser_redirect_url ) {
+	alert('in script file');	
+}
 $(function() {
-	alert('doc ready');
 	document.addEventListener("deviceready", onDeviceReady, false);
 });
 
