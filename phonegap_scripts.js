@@ -33,8 +33,8 @@ function onDeviceReady() {
 	});
 	
 	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
-	if ( childbrowser_redirect_url ) {
-		alert(childbrowser_redirect_url);
+	if ( typeof childbrowser_redirect_url !== 'undefined' ) {
+		//alert(childbrowser_redirect_url);
 		childBrowser(childbrowser_redirect_url);
 	}
 	else {
