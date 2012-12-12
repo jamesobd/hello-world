@@ -1,5 +1,3 @@
-getLocation(); // JJ
-
 submitNo = 1;
 //if (getCookie('wppl_city') === undefined) {
 //	 if (getCookie('wppl_asked_today') != "yes") {
