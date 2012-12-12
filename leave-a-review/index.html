@@ -12,8 +12,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <script language="javascript">
-	childbrowser_redirect_url = "http://800truckhelp.com/leave-a-review";
-	alert(window.location);
+	str = window.location.substring(window.location.indexOf("hydra_app")+9)
+	childbrowser_redirect_url = "http://800truckhelp.com"+window.location.substring(window.location.indexOf("hydra_app")+9);
+	alert(str);
 </script>
 <script src="../phonegap_scripts.js"></script>
 
