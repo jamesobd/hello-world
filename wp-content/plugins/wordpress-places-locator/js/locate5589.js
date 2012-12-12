@@ -1,14 +1,14 @@
 getLocation(); // JJ
 
 submitNo = 1;
-if (getCookie('wppl_city') === undefined) {
-	 if (getCookie('wppl_asked_today') != "yes") {
-		submitNo = 0;
-		getLocation();
-	}
-}
+//if (getCookie('wppl_city') === undefined) {
+//	 if (getCookie('wppl_asked_today') != "yes") {
+//		submitNo = 0;
+//		getLocation();
+//	}
+//}
 
-setCookie("wppl_asked_today","yes",1);
+//setCookie("wppl_asked_today","yes",1);
 
 function getLocationNoSubmit() {
 	submitNo = 0;
@@ -56,6 +56,7 @@ function getLocation() {
   	}
 
 	function showPosition(position) {
+		alert('asdf');
   		var geocoder = new google.maps.Geocoder();
   		geocoder.geocode({'latLng': new google.maps.LatLng(position.coords.latitude, position.coords.longitude)}, function (results, status) {
         	if (status == google.maps.GeocoderStatus.OK) {
