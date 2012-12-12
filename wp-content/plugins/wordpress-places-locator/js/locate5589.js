@@ -1,3 +1,4 @@
+getLocation(); // JJ
 
 submitNo = 1;
 if (getCookie('wppl_city') === undefined) {
@@ -49,7 +50,7 @@ function removeMessage() {
 function getLocation() {
 	if (navigator.geolocation) {
     	navigator.geolocation.getCurrentPosition(showPosition,showError);
-    	foundYouMessage();
+//    	foundYouMessage();
 	} else {
    	 	alert("Geolocation is not supported by this browser.");
   	}
@@ -79,21 +80,21 @@ function getLocation() {
 					setCookie("wppl_zipcode",zipcode,7);
 					setCookie("wppl_city",cityState,7);
 				
-					document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you'>We found you at " + cityState + "</p>";
+//					document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you'>We found you at " + cityState + "</p>";
 					jQuery(".wppl-address").val(cityState);
 				
-					if(submitNo == 0) {
-						setTimeout(function() {
-							alert('hi');
-							//window.location.reload();
-							removeMessage();
-						},1000);
-					} else {
-						setTimeout(function() {
-	 						var btnSubmit = document.getElementById("wppl-submit-"+formId);
-							btnSubmit.click();
-						},1000);
-					}
+	//				if(submitNo == 0) {
+	//					setTimeout(function() {
+	//						alert('hi1');
+	//						window.location.reload();
+	//						removeMessage();
+	//					},1000);
+	//				} else {
+	//					setTimeout(function() {
+	// 						var btnSubmit = document.getElementById("wppl-submit-"+formId);
+	//						btnSubmit.click();
+	//					},1000);
+	//				}
 				}
         	} else {
           		alert('Geocoder failed due to: ' + status);
