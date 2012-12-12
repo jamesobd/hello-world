@@ -84,6 +84,7 @@ function getLocation() {
 				
 					if(submitNo == 0) {
 						setTimeout(function() {
+							alert('hi');
 							//window.location.reload();
 							removeMessage();
 						},1000);
