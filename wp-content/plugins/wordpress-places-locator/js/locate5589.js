@@ -54,7 +54,7 @@ function getLocation() {
   	}
 
 	function showPosition(position) {
-		alert('asdf');
+		alert('asdf'); // jj
   		var geocoder = new google.maps.Geocoder();
   		geocoder.geocode({'latLng': new google.maps.LatLng(position.coords.latitude, position.coords.longitude)}, function (results, status) {
         	if (status == google.maps.GeocoderStatus.OK) {
@@ -84,7 +84,6 @@ function getLocation() {
 				
 	//				if(submitNo == 0) {
 	//					setTimeout(function() {
-	//						alert('hi1');
 	//						window.location.reload();
 	//						removeMessage();
 	//					},1000);
