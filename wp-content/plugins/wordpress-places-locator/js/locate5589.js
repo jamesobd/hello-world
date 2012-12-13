@@ -46,7 +46,7 @@ function removeMessage() {
 	}
 
 function getLocation() {
-	alert('getLocation'); // jj
+	//alert('getLocation'); // jj
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition,showError);
 //    	foundYouMessage();
