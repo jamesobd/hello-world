@@ -53,7 +53,7 @@ function getLocation() {
     	navigator.geolocation.getCurrentPosition(showPosition,showError);
 		}
 		catch(e) {
-			console.log(e);
+			alert(e);
 		}
 //    	foundYouMessage();
 	} else {
