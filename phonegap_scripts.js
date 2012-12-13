@@ -10,7 +10,6 @@
 
 $(function() {
 	document.addEventListener("deviceready", onDeviceReady, false);
-	getLocation();
 });
 
 
@@ -18,6 +17,7 @@ $(function() {
  * DeviceReady event callback
  */
 function onDeviceReady() {
+	getLocation();
 	
 	// Forms using POST method will not work on PhoneGap.
 	// Use a ChildBrowser on any links taking us to pages with these forms.
