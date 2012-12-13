@@ -49,7 +49,9 @@ function getLocation() {
 	
 	if (navigator.geolocation) {
 		try{
-    	navigator.geolocation.getCurrentPosition(showPosition,showError);
+			alert('about to getCurrentPosition');
+			navigator.geolocation.getCurrentPosition(showPosition,showError);
+			alert('finished getCurrentPosition');
 		}
 		catch(e) {
 			alert(e);
