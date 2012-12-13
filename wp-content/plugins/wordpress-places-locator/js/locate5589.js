@@ -55,7 +55,7 @@ function getLocation() {
   	}
 
 	function showPosition(position) {
-		alert('showPosition'); // jj
+		//alert('showPosition'); // jj
   		var geocoder = new google.maps.Geocoder();
   		geocoder.geocode({'latLng': new google.maps.LatLng(position.coords.latitude, position.coords.longitude)}, function (results, status) {
         	if (status == google.maps.GeocoderStatus.OK) {
