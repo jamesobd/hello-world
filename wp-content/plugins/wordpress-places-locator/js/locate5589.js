@@ -48,7 +48,7 @@ function removeMessage() {
 function getLocation() {
 	//alert('getLocation'); // jj
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition,showError);
+		navigator.geolocation.getCurrentPosition(showPosition,showError, {enableHighAccuracy: true});
 //    	foundYouMessage();
 	} else {
    	 	alert("Geolocation is not supported by this browser.");
