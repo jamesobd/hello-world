@@ -19,8 +19,6 @@
 	
 	<preference name="stay-in-webview" value="true" />
 	
-	<plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
-	
 	<gap:plugin name="ChildBrowser" /> <!-- for Cordova (1.9.0+) -->
 </widget>
 
