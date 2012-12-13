@@ -46,16 +46,14 @@ function removeMessage() {
 	}
 
 function getLocation() {
-	//alert('getLocation'); // jj
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition,showError, { timeout: 15000, enableHighAccuracy: true });
-//    	foundYouMessage();
+    	foundYouMessage();
 	} else {
    	 	alert("Geolocation is not supported by this browser.");
   	}
 
 	function showPosition(position) {
-		//alert('showPosition'); // jj
   		var geocoder = new google.maps.Geocoder();
   		geocoder.geocode({'latLng': new google.maps.LatLng(position.coords.latitude, position.coords.longitude)}, function (results, status) {
         	if (status == google.maps.GeocoderStatus.OK) {
@@ -80,14 +78,14 @@ function getLocation() {
 					setCookie("wppl_zipcode",zipcode,7);
 					setCookie("wppl_city",cityState,7);
 				
-//					document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you'>We found you at " + cityState + "</p>";
+					document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you'>We found you at " + cityState + "</p>";
 					jQuery(".wppl-address").val(cityState);
 				
 	//				if(submitNo == 0) {
-	//					setTimeout(function() {
-	//						window.location.reload();
-	//						removeMessage();
-	//					},1000);
+						setTimeout(function() {
+							//window.location.reload();
+							removeMessage();
+						},1000);
 	//				} else {
 	//					setTimeout(function() {
 	// 						var btnSubmit = document.getElementById("wppl-submit-"+formId);
