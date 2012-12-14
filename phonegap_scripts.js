@@ -5,7 +5,7 @@
  * 
  */
 
-
+alert('here0');
 // Forms using POST method will not work on PhoneGap.
 // Use a ChildBrowser on any links taking us to pages with these forms.
 if ( $('form[method="post"]').length > 0 ) {
@@ -24,6 +24,7 @@ $(function(){
  * DeviceReady event callback
  */
 function onDeviceReady() {
+	alert('here2');
 	
 	// Any links that have the childbrowser class will use a ChildBrowser
 	$('a.childbrowser').on('click', function(){
@@ -41,7 +42,7 @@ function onDeviceReady() {
 	});
 }
 
-
+alert('here1');
 /**
  * Displays the url in a fullscreen ChildBrowser
  */
