@@ -33,11 +33,6 @@ function onDeviceReady() {
 		childBrowser(e.target.href);
 	});
 	
-	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
-	if ( typeof childbrowser_redirect_url != 'undefined' ) {
-		childBrowser(childbrowser_redirect_url);
-	}
-	
 	// Forms using GET method will work with PhoneGap if the submission uses a ChildBrowser
 	$('form[method="get"]').on('submit', function(e) {
 		e.preventDefault();
@@ -50,7 +45,7 @@ function onDeviceReady() {
 /**
  * Displays the url in a fullscreen ChildBrowser
  */
-function childBrowser(url) {
+function childBrowser(url, backOnClose) {
 	url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+String(window.location).substring(String(window.location).indexOf("hydra_app")+9,String(window.location).indexOf("/index.html"));;
 	window.plugins.childBrowser.showWebPage(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 }

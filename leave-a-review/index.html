@@ -17,7 +17,7 @@ $(function(){
 	$(document).on("deviceready", function(){
 		childBrowser();
 		window.plugins.childBrowser.onClose = function () {
-			alert('childBrowser has closed');
+			window.history.back();
 		};
 	});
 });
