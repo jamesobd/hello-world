@@ -22,7 +22,7 @@ $(function(){
 	$(document).on("deviceready", function(){
 		childBrowser();
 		window.plugins.childBrowser.onClose = function () {
-			$('body h1').text('');
+			$('body h1').text('Returning to App');
 			window.history.back();
 		};
 	});

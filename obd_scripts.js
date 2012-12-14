@@ -55,5 +55,5 @@ function childBrowser(url) {
 	else {
 		url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+location.substring(location.indexOf("hydra_app")+9,location.indexOf("/index.html"));
 	}
-	window.plugins.childBrowser.openExternal(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
+	window.plugins.childBrowser.showWebPage(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 }
