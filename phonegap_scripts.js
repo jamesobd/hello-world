@@ -37,7 +37,7 @@ function onDeviceReady() {
 	});
 	
 	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
-	if ( typeof childbrowser_redirect_url !== 'undefined' ) {
+	if ( typeof childbrowser_redirect_url != 'undefined' ) {
 		childBrowser(childbrowser_redirect_url);
 		//window.history.back();
 	}
