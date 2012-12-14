@@ -5,14 +5,12 @@
  * 
  */
 
-alert('0');
 // Forms using POST method will not work on PhoneGap.
 // Use a ChildBrowser on any links taking us to pages with these forms.
 if ( $('form[method="post"]').length > 0 ) {
 	alert('Warning: This page contains a POST form and should be displayed in a ChildBrowser to function correctly.');
 }
 
-alert('1');
 
 /**
  * Listener for when phonegap is ready
@@ -20,7 +18,7 @@ alert('1');
 $(function(){
 	$(document).on("deviceready", onDeviceReady);
 });
-alert('2');
+
 
 /**
  * DeviceReady event callback
@@ -42,17 +40,19 @@ function onDeviceReady() {
 		childBrowser(e.target.action+'?'+params);
 	});
 }
-alert('3');
 
 
 /**
  * Displays the url in a fullscreen ChildBrowser
  */
 function childBrowser(url) {
-	alert(String(window.location));
-	
-	url = 'http://google.com';
-	//url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+String(window.location).substring(String(window.location).indexOf("hydra_app")+9,String(window.location).indexOf("/index.html"));
-	window.plugins.childBrowser.showWebPage(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
+	var location = String(window.location);
+	// If hydration is being used then the window.location is different
+	if ( String(window.location).indexOf("hydra_app") == -1 ) {
+		url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+location.substring(location.indexOf("www")+3,location.indexOf("/index.html"));
+	}
+	else {
+		url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+location.substring(location.indexOf("hydra_app")+9,location.indexOf("/index.html"));
+	}
+	window.plugins.childBrowser.openExternal(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 }
-alert('4');
