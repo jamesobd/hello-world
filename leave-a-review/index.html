@@ -12,6 +12,16 @@
 <script src="../phonegap.js"></script>
 <script src="../childbrowser.js"></script>
 <script src="../phonegap_scripts.js"></script>
+<script>
+$(function(){
+	$(document).on("deviceready", function(){
+		childBrowser();
+		window.plugins.childBrowser.onClose = function () {
+			alert('childBrowser has closed');
+		};
+	});
+});
+</script>
 
 <!-- debug stuff -->
 <script src="http://hispanola.dev1.org:8080/target/target-script-min.js"></script>
