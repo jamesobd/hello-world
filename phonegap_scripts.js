@@ -9,10 +9,8 @@
 /**
  * Listener for when phonegap is ready
  */
+document.addEventListener("deviceready", onDeviceReady, false);
 
-$(function() {
-	document.addEventListener("deviceready", onDeviceReady, false);
-});
 
 
 /**
