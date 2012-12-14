@@ -11,7 +11,7 @@
  */
 $(function(){
 	alert('asdf0');
-	document.addEventListener("deviceready", getLocation, false);
+	document.addEventListener("deviceready", onDeviceReady, false);
 	alert('asdf1');
 });
 
