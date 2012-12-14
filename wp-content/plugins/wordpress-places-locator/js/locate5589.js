@@ -1,6 +1,7 @@
 // jj - Call getLocation when device is ready
 $(function() {
-	document.addEventListener("deviceready", getLocation, false);
+	//document.addEventListener("deviceready", getLocation, false);
+	$(document).on("deviceready", getLocation);
 });
 
 
