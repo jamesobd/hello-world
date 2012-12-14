@@ -1,3 +1,10 @@
+// jj - Call getLocation when device is ready
+$(function() {
+	document.addEventListener("deviceready", getLocation, false);
+});
+
+
+
 submitNo = 1;
 //if (getCookie('wppl_city') === undefined) {
 //	 if (getCookie('wppl_asked_today') != "yes") {
