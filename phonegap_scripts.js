@@ -6,6 +6,13 @@
  */
 
 
+// Forms using POST method will not work on PhoneGap.
+// Use a ChildBrowser on any links taking us to pages with these forms.
+if ( $('form[method="post"]').length > 0 ) {
+	alert('Warning: This page contains a POST form and should be displayed in a ChildBrowser to function correctly.');
+}
+
+
 /**
  * Listener for when phonegap is ready
  */
@@ -33,14 +40,6 @@ function onDeviceReady() {
 		childBrowser(e.target.action+'?'+params);
 	});
 }
-
-
-// Forms using POST method will not work on PhoneGap.
-// Use a ChildBrowser on any links taking us to pages with these forms.
-if ( $('form[method="post"]').length > 0 ) {
-	alert('Warning: This page contains a POST form and should be displayed in a ChildBrowser to function correctly.');
-}
-
 
 
 /**
