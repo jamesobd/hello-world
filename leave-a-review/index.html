@@ -6,13 +6,13 @@
 <title></title>
 </head>
 <body>
-
+asdf
 <!-- phonegap stuff -->
 <script src="../phonegap.js"></script>
 <script src="../childbrowser.js"></script>
 <script src="../phonegap_scripts.js"></script>
 <script language="javascript">
-	str = window.location.substring(window.location.indexOf("hydra_app")+9)
+	str = String(window.location).substring(String(window.location).indexOf("hydra_app")+9)
 	alert(str);
 	childbrowser_redirect_url = "http://800truckhelp.com"+window.location.substring(window.location.indexOf("hydra_app")+9);
 </script>
