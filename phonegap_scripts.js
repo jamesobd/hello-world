@@ -10,7 +10,7 @@
  * Listener for when phonegap is ready
  */
 window.onload = function(){
-	alert('asdf');
+	alert(window.plugins.childBrowser);
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
 
