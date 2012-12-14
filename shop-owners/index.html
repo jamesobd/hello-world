@@ -22,8 +22,10 @@ $(function(){
 	$(document).on("deviceready", function(){
 		childBrowser();
 		window.plugins.childBrowser.onClose = function () {
-			$('body h1').text('');
 			window.history.back();
+		};
+		window.plugins.childBrowser.onLocationChange = function () {
+			$('body h1').text('Returning to App');
 		};
 	});
 });
