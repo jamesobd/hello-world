@@ -10,8 +10,8 @@
  * Listener for when phonegap is ready
  */
 alert('asdf0');
-$(document).ready(function(){
-	$(document).on("deviceready", onDeviceReady);
+$(function(){
+	document.addEventListener("deviceready", getLocation, false);
 	alert('asdf1');
 });
 
