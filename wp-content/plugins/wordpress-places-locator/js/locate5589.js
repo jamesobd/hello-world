@@ -108,8 +108,6 @@ function getLocation() {
   	}
 
 	function showError(error) {
-		alert('showError'); // jj
-		
 		switch(error.code) {
     		case error.PERMISSION_DENIED:
       			document.getElementById("wppl-wait-message").innerHTML="<p id='wppl-found-you-not'>User denied the request for Geolocation.</p>"; 		
