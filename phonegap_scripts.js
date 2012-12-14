@@ -9,6 +9,7 @@
 /**
  * Listener for when phonegap is ready
  */
+alert('asdf0');
 $(function(){
 	$(document).on("deviceready", onDeviceReady);
 	alert('asdf1');
@@ -19,7 +20,6 @@ $(function(){
  * DeviceReady event callback
  */
 function onDeviceReady() {
-	alert(window.plugins.childBrowser);
 
 	// Forms using POST method will not work on PhoneGap.
 	// Use a ChildBrowser on any links taking us to pages with these forms.
