@@ -38,8 +38,12 @@ function onDeviceReady() {
 	
 	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
 	if ( typeof childbrowser_redirect_url != 'undefined' ) {
+		alert('asdf3a');
 		childBrowser(childbrowser_redirect_url);
 		//window.history.back();
+	}
+	else {
+		alert('asdf3b');
 	}
 	
 	// Forms using GET method will work with PhoneGap if the submission uses a ChildBrowser
