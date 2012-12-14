@@ -46,7 +46,7 @@ if ( $('form[method="post"]').length > 0 ) {
 /**
  * Displays the url in a fullscreen ChildBrowser
  */
-function childBrowser(url, backOnClose) {
+function childBrowser(url) {
 	url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+String(window.location).substring(String(window.location).indexOf("hydra_app")+9,String(window.location).indexOf("/index.html"));;
 	window.plugins.childBrowser.showWebPage(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 }
