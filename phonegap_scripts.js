@@ -11,6 +11,7 @@
  */
 $(function(){
 	$(document).on("deviceready", onDeviceReady);
+	alert('asdf1');
 });
 
 
