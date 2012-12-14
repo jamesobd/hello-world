@@ -10,7 +10,7 @@
  * Listener for when phonegap is ready
  */
 $(function(){
-	document.addEventListener("deviceready", onDeviceReady, false);
+	$(document).on("deviceready", onDeviceReady);
 });
 
 
@@ -32,15 +32,11 @@ function onDeviceReady() {
 		// Load website version in ChildBrowser instead
 		childBrowser(e.target.href);
 	});
-
+	
 	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
 	if ( typeof childbrowser_redirect_url != 'undefined' ) {
-		alert('asdf3a '+childbrowser_redirect_url);
 		childBrowser(childbrowser_redirect_url);
-		//window.history.back();
-	}
-	else {
-		alert('asdf3b '+childbrowser_redirect_url);
+		window.history.back();
 	}
 	
 	// Forms using GET method will work with PhoneGap if the submission uses a ChildBrowser
@@ -56,6 +52,6 @@ function onDeviceReady() {
  * Displays the url in a fullscreen ChildBrowser
  */
 function childBrowser(url) {
-	url = typeof url !== 'undefined' ? url : window.location;
+	url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+String(window.location).substring(String(window.location).indexOf("hydra_app")+9,String(window.location).indexOf("/index.html"));;
 	window.plugins.childBrowser.showWebPage(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 }
