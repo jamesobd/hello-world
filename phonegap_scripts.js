@@ -1,6 +1,8 @@
 /**
  * Some scripts to assist in migrating a website to PhoneGap
  * 
+ * @author James Jensen - Online By Design, LLC
+ * 
  */
 
 
@@ -31,7 +33,7 @@ function onDeviceReady() {
 		// Load website version in ChildBrowser instead
 		childBrowser(e.target.href);
 	});
-	
+	alert(childbrowser_redirect_url);
 	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
 	if ( typeof childbrowser_redirect_url !== 'undefined' ) {
 		alert(childbrowser_redirect_url);
