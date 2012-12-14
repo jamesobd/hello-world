@@ -5,13 +5,14 @@
  * 
  */
 
-
+alert('0');
 // Forms using POST method will not work on PhoneGap.
 // Use a ChildBrowser on any links taking us to pages with these forms.
 if ( $('form[method="post"]').length > 0 ) {
 	alert('Warning: This page contains a POST form and should be displayed in a ChildBrowser to function correctly.');
 }
 
+alert('1');
 
 /**
  * Listener for when phonegap is ready
@@ -19,6 +20,7 @@ if ( $('form[method="post"]').length > 0 ) {
 $(function(){
 	$(document).on("deviceready", onDeviceReady);
 });
+alert('2');
 
 /**
  * DeviceReady event callback
@@ -40,6 +42,7 @@ function onDeviceReady() {
 		childBrowser(e.target.action+'?'+params);
 	});
 }
+alert('3');
 
 
 /**
@@ -52,3 +55,4 @@ function childBrowser(url) {
 	//url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+String(window.location).substring(String(window.location).indexOf("hydra_app")+9,String(window.location).indexOf("/index.html"));
 	window.plugins.childBrowser.showWebPage(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 }
+alert('4');
