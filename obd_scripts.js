@@ -47,6 +47,7 @@ function onDeviceReady() {
  */
 function childBrowser(url) {
 	var location = String(window.location);
+	
 	// If hydration is being used then the window.location is different
 	if ( String(window.location).indexOf("hydra_app") == -1 ) {
 		url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+location.substring(location.indexOf("www")+3,location.indexOf("/index.html"));

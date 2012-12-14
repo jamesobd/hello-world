@@ -20,7 +20,6 @@
  */
 $(function(){
 	$(document).on("deviceready", function(){
-		alert('browser?');
 		childBrowser();
 		window.plugins.childBrowser.onClose = function () {
 			$('body h1').text('');
