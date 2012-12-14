@@ -10,7 +10,7 @@
  * Listener for when phonegap is ready
  */
 alert('asdf0');
-$(function(){
+$(document).ready(function(){
 	$(document).on("deviceready", onDeviceReady);
 	alert('asdf1');
 });
