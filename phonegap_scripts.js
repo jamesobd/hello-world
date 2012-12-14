@@ -10,9 +10,7 @@
  * Listener for when phonegap is ready
  */
 $(function(){
-	alert('asdf0');
 	document.addEventListener("deviceready", onDeviceReady, false);
-	alert('asdf1');
 });
 
 
@@ -20,13 +18,13 @@ $(function(){
  * DeviceReady event callback
  */
 function onDeviceReady() {
-	alert('asdf2');
-	
+	alert('1');
 	// Forms using POST method will not work on PhoneGap.
 	// Use a ChildBrowser on any links taking us to pages with these forms.
 	if ( $('form[method="post"]').length > 0 ) {
 		alert('Warning: This page contains a POST form and should be displayed in a ChildBrowser to function correctly.');
 	}
+	alert('2');
 	
 	// Any links that have the childbrowser class will use a ChildBrowser
 	$('a.childbrowser').on('click', function(){
@@ -35,7 +33,8 @@ function onDeviceReady() {
 		// Load website version in ChildBrowser instead
 		childBrowser(e.target.href);
 	});
-	alert('child browser???'+childbrowser_redirect_url);
+	alert('3');
+
 	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
 	if ( typeof childbrowser_redirect_url != 'undefined' ) {
 		alert('asdf3a '+childbrowser_redirect_url);
