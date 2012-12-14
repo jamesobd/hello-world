@@ -20,7 +20,8 @@ $(function(){
  * DeviceReady event callback
  */
 function onDeviceReady() {
-
+	alert('asdf2');
+	
 	// Forms using POST method will not work on PhoneGap.
 	// Use a ChildBrowser on any links taking us to pages with these forms.
 	if ( $('form[method="post"]').length > 0 ) {
