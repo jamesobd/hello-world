@@ -13,17 +13,10 @@ $(function(){
 	$(document).on("deviceready", onDeviceReady);
 });
 
-
 /**
  * DeviceReady event callback
  */
 function onDeviceReady() {
-	
-	// Forms using POST method will not work on PhoneGap.
-	// Use a ChildBrowser on any links taking us to pages with these forms.
-	if ( $('form[method="post"]').length > 0 ) {
-		alert('Warning: This page contains a POST form and should be displayed in a ChildBrowser to function correctly.');
-	}
 	
 	// Any links that have the childbrowser class will use a ChildBrowser
 	$('a.childbrowser').on('click', function(){
@@ -40,6 +33,14 @@ function onDeviceReady() {
 		childBrowser(e.target.action+'?'+params);
 	});
 }
+
+
+// Forms using POST method will not work on PhoneGap.
+// Use a ChildBrowser on any links taking us to pages with these forms.
+if ( $('form[method="post"]').length > 0 ) {
+	alert('Warning: This page contains a POST form and should be displayed in a ChildBrowser to function correctly.');
+}
+
 
 
 /**
