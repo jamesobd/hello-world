@@ -9,8 +9,9 @@
 /**
  * Listener for when phonegap is ready
  */
-document.addEventListener("deviceready", onDeviceReady, false);
-
+window.onload = function(){
+	document.addEventListener("deviceready", onDeviceReady, false);
+}
 
 
 /**
@@ -21,7 +22,7 @@ function onDeviceReady() {
 	// Forms using POST method will not work on PhoneGap.
 	// Use a ChildBrowser on any links taking us to pages with these forms.
 	if ( $('form[method="post"]').length > 0 ) {
-		alert('Warning: This page contains a POST form.  Add a childbrowser class to the link that got you here.\n\nAlternatively you can add the data-childbrowser-url attribute to the body to redirect to a ChildBrowser.');
+		alert('Warning: This page contains a POST form and should be displayed in a ChildBrowser to function correctly.');
 	}
 	
 	// Any links that have the childbrowser class will use a ChildBrowser
