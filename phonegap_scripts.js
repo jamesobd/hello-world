@@ -9,10 +9,10 @@
 /**
  * Listener for when phonegap is ready
  */
-window.onload = function(){
+$(function(){
 	alert(window.plugins.childBrowser);
 	document.addEventListener("deviceready", onDeviceReady, false);
-}
+});
 
 
 /**
