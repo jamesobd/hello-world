@@ -5,7 +5,7 @@
  * 
  */
 
-alert('here0');
+
 // Forms using POST method will not work on PhoneGap.
 // Use a ChildBrowser on any links taking us to pages with these forms.
 if ( $('form[method="post"]').length > 0 ) {
@@ -24,7 +24,6 @@ $(function(){
  * DeviceReady event callback
  */
 function onDeviceReady() {
-	alert('here2');
 	
 	// Any links that have the childbrowser class will use a ChildBrowser
 	$('a.childbrowser').on('click', function(){
@@ -42,11 +41,14 @@ function onDeviceReady() {
 	});
 }
 
-alert('here1');
+
 /**
  * Displays the url in a fullscreen ChildBrowser
  */
 function childBrowser(url) {
-	url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+String(window.location).substring(String(window.location).indexOf("hydra_app")+9,String(window.location).indexOf("/index.html"));;
+	alert(String(window.location));
+	
+	url = 'http://google.com';
+	//url = typeof url !== 'undefined' ? url : "http://800truckhelp.com"+String(window.location).substring(String(window.location).indexOf("hydra_app")+9,String(window.location).indexOf("/index.html"));
 	window.plugins.childBrowser.showWebPage(url, {showLocationBar: false, showAddress: false, showNavigationBar: false});
 }
