@@ -35,7 +35,7 @@ function onDeviceReady() {
 		// Load website version in ChildBrowser instead
 		childBrowser(e.target.href);
 	});
-	
+	alert('child browser???'+childbrowser_redirect_url);
 	// Any pages which have a childbrowser_redirect_url variable will redirect to a ChildBrowser
 	if ( typeof childbrowser_redirect_url != 'undefined' ) {
 		alert('asdf3a '+childbrowser_redirect_url);
